@@ -1,0 +1,13 @@
+<h1>All Resumes</h1>
+
+<ul>
+  <% @resumes.each do |resume| %>
+    <li>
+      <%= link_to resume.name, resume %>
+      <%= link_to 'Edit', edit_resume_path(resume) %>
+      <%= button_to 'Delete', resume, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Resume', new_resume_path %>
